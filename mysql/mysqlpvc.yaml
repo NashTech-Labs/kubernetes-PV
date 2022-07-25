@@ -1,0 +1,29 @@
+# mysql-pvc.yml
+
+apiVersion: v1
+
+kind: PersistentVolumeClaim
+
+metadata:
+
+  name: mysql-pvc
+
+spec:
+
+  accessModes:
+
+    - ReadWriteMany
+
+  storageClassName: efs-sc
+
+  resources:
+
+    requests:
+
+      storage: 5Gi
+
+  selector:
+    
+    matchLabels:
+      
+      name: efs-sc
